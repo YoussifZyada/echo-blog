@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "start": "dotenvx run -- node server.js",
+    "dev": "dotenvx run -- nodemon server.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
@@ -17,5 +17,8 @@
     "multer": "^2.1.1",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "^1.60.2"
   }
 }

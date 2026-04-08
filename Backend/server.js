@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
-import 'dotenv/config';
+import { config } from '@dotenvx/dotenvx';
+config(); // Load encrypted environment variables
 import dns from 'node:dns';
-dns.setServers(['8.8.8.8', '1.1.1.1']); 
+dns.setServers(['8.8.8.8', '1.1.1.1']);
 import app from './app.js';
 
 const PORT = process.env.PORT || 5000;
