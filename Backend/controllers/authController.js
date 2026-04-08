@@ -25,8 +25,8 @@ export const register = async (req, res, next) => {
       data: { user }
     });
   } catch (err) {
-    next(err);
   }
+  // next(err);
 };
 
 export const login = async (req, res, next) => {

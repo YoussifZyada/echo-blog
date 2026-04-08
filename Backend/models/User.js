@@ -9,10 +9,16 @@ const userSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 // Hash password before saving
-userSchema.pre('save', async function(next) {
-  if (!this.isModified('password')) return next();
-  this.password = await bcrypt.hash(this.password, 12);
-  next();
+//next is not a function
+userSchema.methods.correctPassword = async function(candidatePassword, userPassword) {
+  return await bcrypt.compare(candidatePassword, userPassword);
+};
+userSchema.pre('save', async function () {
+  const user = this;
+
+  if (user.isModified('password')) {
+    user.password = await bcrypt.hash(user.password, 10);
+  }
 });
 
 export default mongoose.model('User', userSchema);
