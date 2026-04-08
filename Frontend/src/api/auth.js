@@ -21,5 +21,12 @@ export const loginUser = async (credentials) => {
     localStorage.setItem('user', JSON.stringify(data.data.user));
   }
   
+  
   return data;
+};
+
+export const logoutUser = () => {
+  localStorage.removeItem('token');
+  localStorage.removeItem('user');
+  window.location.href = '/'; // Redirect to login
 };
