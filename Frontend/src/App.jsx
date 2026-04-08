@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import theme from './theme/theme';
+import Feed from './pages/feed';
 
 // Imports
 import Login from './pages/login';
@@ -18,6 +19,8 @@ function App() {
           
           {/* 2. Register Page (The missing route!) */}
           <Route path="/register" element={<Register />} />
+          
+          <Route path="/feed" element={<Feed />} />
           
           {/* 3. Dashboard (Protected Area) */}
           <Route path="/dashboard" element={<Dashboard />} />
