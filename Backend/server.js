@@ -4,7 +4,7 @@ config(); // Load encrypted environment variables
 import dns from 'node:dns';
 dns.setServers(['8.8.8.8', '1.1.1.1']);
 import app from './app.js';
-import { seedData } from './seed.js'; // 1. Import your seed function
+import { seedData } from './seedData.js'; // 1. Import your seed function
 
 const PORT = process.env.PORT || 5000;
 
